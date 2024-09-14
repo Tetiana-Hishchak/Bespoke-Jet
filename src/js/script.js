@@ -2,7 +2,7 @@
 
 let currentIndex = 0;  // Індекс для тексту починається з 1
 let currentBackgroundIndex = 0;  // Індекс для фону починається з 1
-let currentIndexPage = 1;  // Індекс для слайдів починається з 1
+let currentIndexPage = 0;  // Індекс для слайдів починається з 1
 const totalSlides = 5;  // Всього 5 слайдів
 let autoSlideInterval;  // Змінна для зберігання інтервалу
 
@@ -45,28 +45,30 @@ function changeBackground(n) {
   imageSection.classList.add('hidden');
   setTimeout(() => {
     currentBackgroundIndex = (currentBackgroundIndex + n - 1 + backgrounds.length) % backgrounds.length + 1;
-    imageSection.style.backgroundImage = `url(${backgrounds[currentBackgroundIndex - 1]})`;
+    imageSection.style.backgroundImage = `url(${backgrounds[currentBackgroundIndex-1]})`;
     imageSection.classList.remove('hidden');
   }, 500);
 }
 
 // Функція для перемикання слайдів
 function changeSlide(n) {
-  currentIndexPage = (currentIndexPage + n + totalSlides) % totalSlides;
   updateIndex();
 
-  if (currentIndexPage === 1) {
+  console.log(currentBackgroundIndex, currentIndex);
+  
+
+  if (currentIndex === 0) {
     initialView.classList.remove('hidden');
     secondView.classList.add('hidden');
   } else {
     initialView.classList.add('hidden');
-    secondView.classList.remove('hidden');
+    secondView.classList.remove('hidden');   
   }
 }
 
 // Функція для оновлення тексту індексу
-function updateIndex() {
-  indexDisplay.textContent = `${currentIndexPage} / ${totalSlides}`;
+function updateIndex() { 
+  indexDisplay.textContent = `${currentIndex} / 5`;
 }
 
 // Автоматичне перемикання слайдів кожні 3 секунди
