@@ -3,7 +3,7 @@
 let currentIndex = 0;  // Індекс для тексту починається з 1
 let currentBackgroundIndex = 0;  // Індекс для фону починається з 1
 let currentIndexPage = 0;  // Індекс для слайдів починається з 1
-const totalSlides = 5;  // Всього 5 слайдів
+const totalSlides = 6;  // Всього 5 слайдів
 let autoSlideInterval;  // Змінна для зберігання інтервалу
 
 // Массиви з текстами і фонами
@@ -23,6 +23,37 @@ const backgrounds = [
   './image/Bespoke5.png',
 ];
 
+// const ne = [
+//   {
+//     id: 1,
+//     image: './image/Bespoke1.png',
+//     text: "The first time I used the Samsung Bespoke Jet™, I cried. I’m not being sensational; I really did. Of course, this vacuum worked great. But that’s not all.",
+//   },
+//   {
+//     id: 2,
+//     image: './image/Bespoke2.png',
+//     text:"“If you’re an over-cleaner, like myself, you’ll nerd out on all of the functions. If you avoid this chore at all costs, you’ll appreciate how simple Samsung makes it.” ",
+//   },
+
+//   {
+//     id: 3,
+//     image: './image/Bespoke3.png',
+//     text:  "Both the floor and pet hair attachments are cleverly designed to eliminate the dreaded hair wrap. (In other words, you’ll never have to tackle hair tangles with a pair of scissors again.)” ",
+//   },
+
+//   {
+//     id: 4,
+//     image: './image/Bespoke4.png',
+//     text: "The first time I used the Samsung Bespoke Jet™, I cried. I’m not being sensational; I really did. Of course, this vacuum worked great. But that’s not all.",
+//   },
+
+//   {
+//     id: 5,
+//     image: './image/Bespoke5.png',
+//     text: "The first time I used the Samsung Bespoke Jet™, I cried. I’m not being sensational; I really did. Of course, this vacuum worked great. But that’s not all.",
+//   },
+// ]
+
 // Отримуємо елементи для зміни
 const paragraph = document.getElementById("paragraph");
 const imageSection = document.getElementById('imageSection');
@@ -35,7 +66,7 @@ function changeParagraph(n) {
   paragraph.classList.add('hidden');
   setTimeout(() => {
     currentIndex = (currentIndex + n - 1 + paragraphs.length) % paragraphs.length + 1;
-    paragraph.innerHTML = paragraphs[currentIndex - 1] + '<a class="link" href="about:blank" target="_blank">Read More...</a>';
+    paragraph.innerHTML = paragraphs[currentIndex - 2] + '<a class="link" href="about:blank" target="_blank">Read More...</a>';
     paragraph.classList.remove('hidden');
   }, 300);
 }
@@ -45,7 +76,7 @@ function changeBackground(n) {
   imageSection.classList.add('hidden');
   setTimeout(() => {
     currentBackgroundIndex = (currentBackgroundIndex + n - 1 + backgrounds.length) % backgrounds.length + 1;
-    imageSection.style.backgroundImage = `url(${backgrounds[currentBackgroundIndex-1]})`;
+    imageSection.style.backgroundImage = `url(${backgrounds[currentBackgroundIndex - 2]})`;
     imageSection.classList.remove('hidden');
   }, 500);
 }
@@ -53,9 +84,6 @@ function changeBackground(n) {
 // Функція для перемикання слайдів
 function changeSlide(n) {
   updateIndex();
-
-  console.log(currentBackgroundIndex, currentIndex);
-  
 
   if (currentIndex === 0) {
     initialView.classList.remove('hidden');
@@ -102,6 +130,7 @@ document.querySelector(".next").addEventListener('click', function() {
 
 // Ініціалізація індексу та запуск авто-перемикання при завантаженні сторінки
 window.onload = function() {
+  console.log(currentBackgroundIndex, currentIndex);
   updateIndex();
   startAutoSlide();  // Запуск автоматичної зміни слайдів
 };
