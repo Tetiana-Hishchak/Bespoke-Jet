@@ -167,6 +167,36 @@
 // };
 
 
+// import HtmlWebpackPlugin from 'html-webpack-plugin';
+// import path from 'path';
+
+// export default {
+//   mode: 'development',
+//   entry: './src/js/index.js',
+//   output: {
+//     filename: 'bundle.js',
+//     path: path.resolve('dist'),
+//   },
+//   module: {
+//     rules: [
+//       {
+//         test: /\.(png|jpg|jpeg|gif|svg)$/i,
+//         type: 'asset/resource',
+//       },
+//       {
+//         test: /\.css$/,
+//         use: ['style-loader', 'css-loader'],
+//       },
+//     ],
+//   },
+//   plugins: [
+//     new HtmlWebpackPlugin({
+//       template: './src/index.html',  // Убедитесь, что этот путь корректный
+//       filename: 'index.html',
+//     }),
+//   ],
+// };
+
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 
@@ -180,20 +210,22 @@ export default {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/i,
+        test: /\.(png|jpg|jpeg|gif|svg)$/i,  // Правило для обробки зображень
         type: 'asset/resource',
+        generator: {
+          filename: 'image/[name][ext]',  // Копіювати зображення в папку 'dist/image'
+        },
       },
       {
-        test: /\.css$/,
+        test: /\.css$/,  // Для обробки CSS
         use: ['style-loader', 'css-loader'],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',  // Убедитесь, что этот путь корректный
+      template: './src/index.html',  // Шлях до вашого HTML
       filename: 'index.html',
     }),
   ],
 };
-

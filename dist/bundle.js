@@ -126,7 +126,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"bb1ef8994ddda6e4d081.png\";\n\n//# sourceURL=webpack://my-project/./src/image/Bespoke1.png?");
+eval("module.exports = __webpack_require__.p + \"image/Bespoke1.png\";\n\n//# sourceURL=webpack://my-project/./src/image/Bespoke1.png?");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ eval("module.exports = __webpack_require__.p + \"bb1ef8994ddda6e4d081.png\";\n\n
   \****************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"bb1ef8994ddda6e4d081.png\";\n\n//# sourceURL=webpack://my-project/./src/image/main.png?");
+eval("module.exports = __webpack_require__.p + \"image/main.png\";\n\n//# sourceURL=webpack://my-project/./src/image/main.png?");
 
 /***/ }),
 

@@ -1,0 +1,12 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 52" width="375" height="52">
+	<title>Bespoke Jet™</title>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 100px;line-height: 49px;fill: #ffffff;font-weight: bold;font-family: "Samsung Sharp Sans" } 
+		.t1 { font-size: 82px;line-height: 303px;fill: #ffffff;font-weight: 500;font-family: "Samsung Sharp Sans" } 
+	</style>
+	<text id="Bespoke Jet™" style="transform: matrix(.52,0,0,.52,-26.707,.907)" >
+		<tspan x="44" y="76" class="t0">Bespoke Jet</tspan><tspan  y="76" class="t1">™
+</tspan>
+	</text>
+</svg>
